@@ -10,6 +10,7 @@ $borderRadiusHover: 0.3rem;
 
 	h1 {
 		text-align: center;
+		color: #f0f0f0;
 	}
 
 	.main {
@@ -18,11 +19,30 @@ $borderRadiusHover: 0.3rem;
 	}
 }
 
+.count-form {
+	display: grid;
+	gap: $gap;
+	margin: 0 auto;
+	grid-template-columns: 2fr repeat(4, 1fr);
+	width: 100%;
+
+	label {
+		color: #f0f0f0 !important;
+		font-weight: bold;
+	}
+
+	.ant-form-item {
+		margin-bottom: 0;
+
+		.ant-input-number-input {
+			border-radius: $borderRadius;
+		}
+	}
+}
+
 .ant-list-items {
 	display: grid;
 	gap: $gap;
-	border: $border;
-	padding: $padding !important;
 
 	.item-category {
 		display: grid;

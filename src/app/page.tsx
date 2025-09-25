@@ -108,6 +108,66 @@ const equipmentData = [
 			},
 		],
 	},
+	{
+		category: 'Armored Cars',
+		items: [
+			{
+				key: 'armored_car_equipment_0',
+				label: 'Armored Car Equipment 0',
+				img_src: '/Armored_car_equipment_0.png',
+			},
+			{
+				key: 'armored_car_equipment_1',
+				label: 'Armored Car Equipment 1',
+				img_src: '/Armored_car_equipment_1.png',
+			},
+			{
+				key: 'armored_car_equipment_2',
+				label: 'Armored Car Equipment 2',
+				img_src: '/Armored_car_equipment_2.png',
+			},
+			{
+				key: 'armored_car_equipment_3',
+				label: 'Armored Car Equipment 3',
+				img_src: '/Armored_car_equipment_3.png',
+			},
+		],
+	},
+	{
+		category: 'Mechanized Units',
+		items: [
+			{
+				key: 'mechanized_equipment_1',
+				label: 'Mechanized Equipment 1',
+				img_src: '/Mechanized_equipment_1.png',
+			},
+			{
+				key: 'mechanized_equipment_2',
+				label: 'Mechanized Equipment 2',
+				img_src: '/Mechanized_equipment_2.png',
+			},
+			{
+				key: 'mechanized_equipment_3',
+				label: 'Mechanized Equipment 3',
+				img_src: '/Mechanized_equipment_3.png',
+			},
+		],
+	},
+	{
+		category: 'Rocket Artillery',
+		items: [
+			{
+				key: 'rocket_artillery_1',
+				label: 'Rocket Artillery 1',
+				img_src: '/Rocket_Art_1_allies.png',
+			},
+			{
+				key: 'rocket_artillery_2',
+				label: 'Rocket Artillery 2',
+				img_src: '/Rocket_Art_2_allies.png',
+			},
+		],
+	},
 ]
 
 const aeCommand = 'add_equipment'
@@ -119,11 +179,11 @@ const openNativeNotification = (message: string, imgSrc: string | null) => {
 	const content = document.createElement('div')
 	content.style.display = 'flex'
 	content.style.alignItems = 'center'
-	content.style.gap = '10px'
+	content.style.gap = '0.5rem'
 
 	if (imgSrc) {
 		const img = document.createElement('img')
-		img.src = imgSrc
+		img.src = `/items${imgSrc}`
 		img.alt = 'Item Image'
 		img.style.width = '50px'
 		img.style.height = '50px'
@@ -154,13 +214,46 @@ export default function Home() {
 			<main className='main'>
 				<h1 className='title'>Hearts of Iron IV - Commands</h1>
 
-				<Form>
+				<Form className='count-form'>
 					<Form.Item label='Count'>
 						<InputNumber
 							value={count}
 							onChange={(value) => setCount(value || 0)}
+							style={{ width: '100%' }}
 						/>
 					</Form.Item>
+
+					<Button
+						onClick={() => {
+							setCount(1000)
+						}}
+					>
+						1.000
+					</Button>
+
+					<Button
+						onClick={() => {
+							setCount(10_000)
+						}}
+					>
+						10.000
+					</Button>
+
+					<Button
+						onClick={() => {
+							setCount(100_000)
+						}}
+					>
+						100.000
+					</Button>
+
+					<Button
+						onClick={() => {
+							setCount(1_000_000)
+						}}
+					>
+						1'000.000
+					</Button>
 				</Form>
 
 				<List
@@ -196,7 +289,7 @@ export default function Home() {
 												}}
 											>
 												<img
-													src={`/items/${item.img_src}`}
+													src={`/items${item.img_src}`}
 													alt={item.label}
 													style={{
 														maxWidth: '100%',
