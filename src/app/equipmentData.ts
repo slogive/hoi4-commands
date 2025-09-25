@@ -48,17 +48,17 @@ export const equipmentData = [
 		category: 'Tank Destroyers / AT',
 		items: [
 			{
-				key: 'anti_tank_equipment_0',
+				key: 'anti_tank_equipment_1',
 				label: 'Tank Destroyer Equipment 1',
 				img_src: '/AT_1_allies.png',
 			},
 			{
-				key: 'anti_tank_equipment_1',
+				key: 'anti_tank_equipment_2',
 				label: 'Tank Destroyer Equipment 2',
 				img_src: '/AT_2_allies.png',
 			},
 			{
-				key: 'anti_tank_equipment_2',
+				key: 'anti_tank_equipment_3',
 				label: 'Tank Destroyer Equipment 3',
 				img_src: '/AT_3_allies.png',
 			},
@@ -68,17 +68,17 @@ export const equipmentData = [
 		category: 'Anti-Air',
 		items: [
 			{
-				key: 'anti_air_equipment_0',
+				key: 'anti_air_equipment_1',
 				label: 'AA Gun Equipment 1',
 				img_src: '/AA_1_allies.png',
 			},
 			{
-				key: 'anti_air_equipment_1',
+				key: 'anti_air_equipment_2',
 				label: 'AA Gun Equipment 2',
 				img_src: '/AA_2_allies.png',
 			},
 			{
-				key: 'anti_air_equipment_2',
+				key: 'anti_air_equipment_3',
 				label: 'AA Gun Equipment 3',
 				img_src: '/AA_3_allies.png',
 			},
@@ -88,12 +88,12 @@ export const equipmentData = [
 		category: 'Trucks / Motorized',
 		items: [
 			{
-				key: 'motorized_equipment_0',
+				key: 'motorized_equipment_1',
 				label: 'Motorized Equipment 1 (Generic Trucks)',
 				img_src: '/Motorized_equipment_0.png',
 			},
 			{
-				key: 'motorized_equipment_1',
+				key: 'motorized_equipment_2',
 				label: 'Motorized Equipment 2 (Later-Tier Motorized)',
 				img_src: '/Motorized_equipment_1.png',
 			},
@@ -102,26 +102,26 @@ export const equipmentData = [
 	{
 		category: 'Armored Cars',
 		items: [
-			{
-				key: 'armored_car_equipment_0',
-				label: 'Armored Car Equipment 0',
-				img_src: '/Armored_car_equipment_0.png',
-			},
+			// {
+			// 	key: 'armored_car_equipment_0',
+			// 	label: 'Armored Car Equipment 0',
+			// 	img_src: '/Armored_car_equipment_0.png',
+			// },
 			{
 				key: 'armored_car_equipment_1',
-				label: 'Armored Car Equipment 1',
+				label: 'Improved Armored Car',
 				img_src: '/Armored_car_equipment_1.png',
 			},
 			{
 				key: 'armored_car_equipment_2',
-				label: 'Armored Car Equipment 2',
+				label: 'Advanced Armored Car',
 				img_src: '/Armored_car_equipment_2.png',
 			},
-			{
-				key: 'armored_car_equipment_3',
-				label: 'Armored Car Equipment 3',
-				img_src: '/Armored_car_equipment_3.png',
-			},
+			// {
+			// 	key: 'armored_car_equipment_3',
+			// 	label: 'Armored Car Equipment 3',
+			// 	img_src: '/Armored_car_equipment_3.png',
+			// },
 		],
 	},
 	{
@@ -148,12 +148,12 @@ export const equipmentData = [
 		category: 'Rocket Artillery',
 		items: [
 			{
-				key: 'rocket_artillery_1',
+				key: 'rocket_artillery_equipment_1',
 				label: 'Rocket Artillery 1',
 				img_src: '/Rocket_Art_1_allies.png',
 			},
 			{
-				key: 'rocket_artillery_2',
+				key: 'rocket_artillery_equipment_2',
 				label: 'Rocket Artillery 2',
 				img_src: '/Rocket_Art_2_allies.png',
 			},
@@ -174,17 +174,17 @@ export const equipmentData = [
 		items: [
 			{
 				key: 'train_equipment_1',
-				label: 'Train Equipment 1',
+				label: 'Civilian Train',
 				img_src: '/Train_equipment_1.png',
 			},
 			{
 				key: 'train_equipment_2',
-				label: 'Train Equipment 2',
+				label: 'Austerity Train',
 				img_src: '/Train_equipment_2.png',
 			},
 			{
 				key: 'train_equipment_3',
-				label: 'Train Equipment 3',
+				label: 'Armored Train',
 				img_src: '/Train_equipment_3.png',
 			},
 		],
@@ -193,12 +193,12 @@ export const equipmentData = [
 		category: 'Amphibious Mechs',
 		items: [
 			{
-				key: 'amphibious_mech_1',
+				key: 'amphibious_mechanized_equipment_1',
 				label: 'Amphibious Mech 1',
 				img_src: '/Generic_amphibious_mech_1.png',
 			},
 			{
-				key: 'amphibious_mech_2',
+				key: 'amphibious_mechanized_equipment_2',
 				label: 'Amphibious Mech 2',
 				img_src: '/Generic_amphibious_mech_2.png',
 			},
@@ -208,7 +208,7 @@ export const equipmentData = [
 		category: 'Motorized Rocket Units',
 		items: [
 			{
-				key: 'motorized_rocket_unit',
+				key: 'motorized_rocket_equipment_1',
 				label: 'Motorized Rocket Unit',
 				img_src: '/Motorized_rocket_unit.png',
 			},
