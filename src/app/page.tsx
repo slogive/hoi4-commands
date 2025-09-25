@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Form, InputNumber, List, notification } from 'antd'
+import { Button, Form, InputNumber, List } from 'antd'
 import { useState } from 'react'
 
 import './page.scss'
@@ -14,22 +14,22 @@ const equipmentData = [
 			{
 				key: 'infantry_equipment_1',
 				label: 'Infantry Equipment 1',
-				img_src: '/items/Infantry0.png',
+				img_src: '/Infantry0.png',
 			},
 			{
 				key: 'infantry_equipment_2',
 				label: 'Infantry Equipment 2',
-				img_src: '/items/Infantry1.png',
+				img_src: '/Infantry1.png',
 			},
 			{
 				key: 'infantry_equipment_3',
 				label: 'Infantry Equipment 3',
-				img_src: '/items/Infantry2.png',
+				img_src: '/Infantry2.png',
 			},
 			{
 				key: 'infantry_equipment_4',
 				label: 'Infantry Equipment 4',
-				img_src: '/items/Infantry3.png',
+				img_src: '/Infantry3.png',
 			},
 		],
 	},
@@ -39,17 +39,17 @@ const equipmentData = [
 			{
 				key: 'artillery_equipment_1',
 				label: 'Artillery Equipment 1',
-				img_src: '/items/Art_1_comintern.png',
+				img_src: '/Art_1_comintern.png',
 			},
 			{
 				key: 'artillery_equipment_2',
 				label: 'Artillery Equipment 2',
-				img_src: '/items/Art_2_comintern.png',
+				img_src: '/Art_2_comintern.png',
 			},
 			{
 				key: 'artillery_equipment_3',
 				label: 'Artillery Equipment 3',
-				img_src: '/items/Art_3_comintern.png',
+				img_src: '/Art_3_comintern.png',
 			},
 		],
 	},
@@ -59,17 +59,17 @@ const equipmentData = [
 			{
 				key: 'tank_destroyer_equipment_1',
 				label: 'Tank Destroyer Equipment 1',
-				img_src: '/items/AT_1_allies.png',
+				img_src: '/AT_1_allies.png',
 			},
 			{
 				key: 'tank_destroyer_equipment_2',
 				label: 'Tank Destroyer Equipment 2',
-				img_src: '/items/AT_2_allies.png',
+				img_src: '/AT_2_allies.png',
 			},
 			{
 				key: 'tank_destroyer_equipment_3',
 				label: 'Tank Destroyer Equipment 3',
-				img_src: '/items/AT_3_allies.png',
+				img_src: '/AT_3_allies.png',
 			},
 		],
 	},
@@ -79,17 +79,17 @@ const equipmentData = [
 			{
 				key: 'aa_gun_equipment_1',
 				label: 'AA Gun Equipment 1',
-				img_src: '/items/AA_1_allies.png',
+				img_src: '/AA_1_allies.png',
 			},
 			{
 				key: 'aa_gun_equipment_2',
 				label: 'AA Gun Equipment 2',
-				img_src: '/items/AA_2_allies.png',
+				img_src: '/AA_2_allies.png',
 			},
 			{
 				key: 'aa_gun_equipment_3',
 				label: 'AA Gun Equipment 3',
-				img_src: '/items/AA_3_allies.png',
+				img_src: '/AA_3_allies.png',
 			},
 		],
 	},
@@ -99,12 +99,12 @@ const equipmentData = [
 			{
 				key: 'motorized_equipment_1',
 				label: 'Motorized Equipment 1 (Generic Trucks)',
-				img_src: '',
+				img_src: '/Motorized_equipment_0.png',
 			},
 			{
 				key: 'motorized_equipment_2',
 				label: 'Motorized Equipment 2 (Later-Tier Motorized)',
-				img_src: '',
+				img_src: '/Motorized_equipment_1.png',
 			},
 		],
 	},
@@ -112,12 +112,38 @@ const equipmentData = [
 
 const aeCommand = 'add_equipment'
 
-const openNotification = (message: string) => {
-	notification.success({
-		message: 'Command Copied',
-		description: message,
-		placement: 'topRight',
-	})
+const openNativeNotification = (message: string, imgSrc: string | null) => {
+	const notification = document.createElement('div')
+	notification.className = 'native-notification'
+
+	const content = document.createElement('div')
+	content.style.display = 'flex'
+	content.style.alignItems = 'center'
+	content.style.gap = '10px'
+
+	if (imgSrc) {
+		const img = document.createElement('img')
+		img.src = imgSrc
+		img.alt = 'Item Image'
+		img.style.width = '50px'
+		img.style.height = '50px'
+		img.style.objectFit = 'contain'
+		content.appendChild(img)
+	}
+
+	const text = document.createElement('span')
+	text.innerText = message
+	content.appendChild(text)
+
+	notification.appendChild(content)
+	document.body.appendChild(notification)
+
+	setTimeout(() => {
+		notification.classList.add('fade-out')
+		notification.addEventListener('transitionend', () => {
+			notification.remove()
+		})
+	}, 3000)
 }
 
 export default function Home() {
@@ -154,7 +180,7 @@ export default function Home() {
 										onClick={() => {
 											const command = `${aeCommand} ${item.key} ${count}`
 											navigator.clipboard.writeText(command)
-											openNotification(`Copied: ${command}`)
+											openNativeNotification(`Copied: ${command}`, item.img_src)
 										}}
 										className='item-container'
 									>
@@ -170,12 +196,14 @@ export default function Home() {
 												}}
 											>
 												<img
-													src={item.img_src}
+													src={`/items/${item.img_src}`}
 													alt={item.label}
 													style={{
 														maxWidth: '100%',
 														maxHeight: '100%',
 														objectFit: 'contain',
+														// object padding of 0.5rem
+														padding: '0.5rem',
 													}}
 												/>
 											</div>

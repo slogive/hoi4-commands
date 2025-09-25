@@ -2,6 +2,8 @@ $padding: 0.5rem;
 $borderColor: #f0f0f0;
 $border: 1px solid #{$borderColor};
 $gap: #{$padding};
+$borderRadius: 0.1rem;
+$borderRadiusHover: 0.3rem;
 
 .page {
 	padding: $padding;
@@ -29,6 +31,8 @@ $gap: #{$padding};
 		.item-title {
 			font-size: 1.5rem;
 			font-weight: bold;
+			color: #f0f0f0;
+			text-align: center;
 		}
 
 		.items-container {
@@ -40,13 +44,19 @@ $gap: #{$padding};
 				display: grid;
 				grid-template-columns: repeat(2, auto);
 				gap: $gap;
-				// background-color: rebeccapurple;
 				border: $border;
+				background-color: #f0f0f0;
+				border-radius: $borderRadius;
+				overflow: hidden;
 
 				&:hover {
 					cursor: pointer;
 					background-color: $borderColor;
-					transition: all 0.2s ease;
+					transition: all 0.3s ease;
+					opacity: 0.8;
+					// size increase on hover
+					// transform: scale(1.02);
+					border-radius: $borderRadiusHover;
 
 					img {
 						filter: grayscale(100%);
@@ -55,4 +65,26 @@ $gap: #{$padding};
 			}
 		}
 	}
+}
+
+.native-notification {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	// background-color: #4caf50;
+	background-color: rgb(49, 60, 44);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	opacity: 1;
+	transition:
+		opacity 0.5s ease,
+		transform 0.5s ease;
+}
+
+.native-notification.fade-out {
+	opacity: 0;
+	transform: translateY(-20px);
 }
