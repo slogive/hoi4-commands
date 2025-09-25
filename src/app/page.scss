@@ -4,6 +4,8 @@ $border: 1px solid #{$borderColor};
 $gap: #{$padding};
 $borderRadius: 0.1rem;
 $borderRadiusHover: 0.3rem;
+$greenColor: rgb(49, 60, 44);
+$lightGreenColor: rgb(54, 60, 44);
 
 .page {
 	padding: $padding;
@@ -101,23 +103,48 @@ $borderRadiusHover: 0.3rem;
 }
 
 .native-notification {
+	top: $padding;
+	right: $padding;
+
 	position: fixed;
-	top: 20px;
-	right: 20px;
-	// background-color: #4caf50;
-	background-color: rgb(49, 60, 44);
+	background-color: $lightGreenColor;
 	color: white;
-	padding: 10px 20px;
-	border-radius: 5px;
+	padding: $padding;
+	border-radius: $borderRadiusHover !important;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 	z-index: 1000;
 	opacity: 1;
 	transition:
 		opacity 0.5s ease,
 		transform 0.5s ease;
+	display: grid;
+	gap: $gap;
+
+	@media screen and (max-width: 768px) {
+		top: $padding;
+		right: $padding;
+		left: $padding;
+	}
+
+	@media screen and (min-width: 769px) {
+		width: 500px;
+	}
 }
 
 .native-notification.fade-out {
 	opacity: 0;
 	transform: translateY(-20px);
+}
+
+.native-notification-content {
+	display: grid;
+	align-items: center;
+	gap: 0.5rem;
+	grid-template-columns: 50px auto;
+}
+
+.native-notification-content img {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
 }

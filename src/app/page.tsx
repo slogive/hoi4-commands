@@ -177,17 +177,12 @@ const openNativeNotification = (message: string, imgSrc: string | null) => {
 	notification.className = 'native-notification'
 
 	const content = document.createElement('div')
-	content.style.display = 'flex'
-	content.style.alignItems = 'center'
-	content.style.gap = '0.5rem'
+	content.className = 'native-notification-content'
 
 	if (imgSrc) {
 		const img = document.createElement('img')
 		img.src = `/items${imgSrc}`
 		img.alt = 'Item Image'
-		img.style.width = '50px'
-		img.style.height = '50px'
-		img.style.objectFit = 'contain'
 		content.appendChild(img)
 	}
 
@@ -257,7 +252,8 @@ export default function Home() {
 										onClick={() => {
 											const command = `${aeCommand} ${item.key} ${count}`
 											navigator.clipboard.writeText(command)
-											openNativeNotification(`Copied: ${command}`, item.img_src)
+											// openNativeNotification(`Copied: ${command}`, item.img_src)
+											openNativeNotification(command, item.img_src)
 										}}
 										className='item-container'
 									>
