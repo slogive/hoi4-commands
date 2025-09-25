@@ -168,6 +168,16 @@ const equipmentData = [
 			},
 		],
 	},
+	{
+		category: 'Support Equipment',
+		items: [
+			{
+				key: 'support_equipment_1',
+				label: 'Support Equipment',
+				img_src: '/Support_Equipment.png',
+			},
+		],
+	},
 ]
 
 const aeCommand = 'add_equipment'
@@ -264,7 +274,7 @@ export default function Home() {
 										onClick={() => {
 											const command = `${aeCommand} ${item.key} ${count}`
 											navigator.clipboard.writeText(command)
-											openNativeNotification(`Copied: ${command}`, item.img_src)
+											openNativeNotification(command, item.img_src)
 											addToHistory(command)
 										}}
 										className='item-container'
