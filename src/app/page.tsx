@@ -178,6 +178,51 @@ const equipmentData = [
 			},
 		],
 	},
+	{
+		category: 'Trains',
+		items: [
+			{
+				key: 'train_equipment_1',
+				label: 'Train Equipment 1',
+				img_src: '/Train_equipment_1.png',
+			},
+			{
+				key: 'train_equipment_2',
+				label: 'Train Equipment 2',
+				img_src: '/Train_equipment_2.png',
+			},
+			{
+				key: 'train_equipment_3',
+				label: 'Train Equipment 3',
+				img_src: '/Train_equipment_3.png',
+			},
+		],
+	},
+	{
+		category: 'Amphibious Mechs',
+		items: [
+			{
+				key: 'amphibious_mech_1',
+				label: 'Amphibious Mech 1',
+				img_src: '/Generic_amphibious_mech_1.png',
+			},
+			{
+				key: 'amphibious_mech_2',
+				label: 'Amphibious Mech 2',
+				img_src: '/Generic_amphibious_mech_2.png',
+			},
+		],
+	},
+	{
+		category: 'Motorized Rocket Units',
+		items: [
+			{
+				key: 'motorized_rocket_unit',
+				label: 'Motorized Rocket Unit',
+				img_src: '/Motorized_rocket_unit.png',
+			},
+		],
+	},
 ]
 
 const aeCommand = 'add_equipment'
@@ -214,12 +259,17 @@ const openNativeNotification = (message: string, imgSrc: string | null) => {
 export default function Home() {
 	const [count, setCount] = useState(1_000_000)
 	const [history, setHistory] = useState<string[]>(() => {
-		const savedHistory = localStorage.getItem('commandHistory')
-		return savedHistory ? JSON.parse(savedHistory) : []
+		if (typeof window !== 'undefined') {
+			const savedHistory = localStorage.getItem('commandHistory')
+			return savedHistory ? JSON.parse(savedHistory) : []
+		}
+		return []
 	})
 
 	useEffect(() => {
-		localStorage.setItem('commandHistory', JSON.stringify(history))
+		if (typeof window !== 'undefined') {
+			localStorage.setItem('commandHistory', JSON.stringify(history))
+		}
 	}, [history])
 
 	const addToHistory = (command: string) => {
