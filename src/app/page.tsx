@@ -12,22 +12,22 @@ const equipmentData = [
 		category: 'Infantry Equipment',
 		items: [
 			{
-				key: 'infantry_equipment_1',
+				key: 'infantry_equipment_0',
 				label: 'Infantry Equipment 1',
 				img_src: '/Infantry0.png',
 			},
 			{
-				key: 'infantry_equipment_2',
+				key: 'infantry_equipment_1',
 				label: 'Infantry Equipment 2',
 				img_src: '/Infantry1.png',
 			},
 			{
-				key: 'infantry_equipment_3',
+				key: 'infantry_equipment_2',
 				label: 'Infantry Equipment 3',
 				img_src: '/Infantry2.png',
 			},
 			{
-				key: 'infantry_equipment_4',
+				key: 'infantry_equipment_3',
 				label: 'Infantry Equipment 4',
 				img_src: '/Infantry3.png',
 			},
@@ -323,7 +323,7 @@ export default function Home() {
 									<div
 										key={item.key}
 										onClick={() => {
-											const command = `${aeCommand} ${item.key} ${count}`
+											const command = `${aeCommand} ${count} ${item.key}`
 											navigator.clipboard.writeText(command)
 											openNativeNotification(command, item.img_src)
 											addToHistory(command)
