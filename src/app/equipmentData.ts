@@ -89,13 +89,15 @@ export const equipmentData = [
 		items: [
 			{
 				key: 'motorized_equipment_1',
-				label: 'Motorized Equipment 1 (Generic Trucks)',
+				label: 'Early Truck',
 				img_src: '/Motorized_equipment_0.png',
+				desc: 'During the Great War the armies starting using basic civilian trucks for transporting supplies and hauling equipment. These have since become an integral part of most armies',
 			},
 			{
 				key: 'motorized_equipment_2',
-				label: 'Motorized Equipment 2 (Later-Tier Motorized)',
+				label: 'Truck',
 				img_src: '/Motorized_equipment_1.png',
+				desc: 'Motorizing infantry is the first stage to mechanizing an army. Civilian trucks are readily adapted to military uses of transporting soldiers, towing guns, and carrying equipment and supplies. This greatly increases the strategic mobility of infantry units, which would otherwise rely on marching',
 			},
 		],
 	},
@@ -105,23 +107,23 @@ export const equipmentData = [
 			// ! TODO: check if armored_car_equipment_0 is a valid equipment key
 			{
 				key: 'armored_car_equipment_0',
-				label: 'Armored Car Equipment 0',
+				label: 'Interwar Armored Car',
 				img_src: '/Armored_car_equipment_0.png',
 			},
 			{
 				key: 'armored_car_equipment_1',
-				label: 'Improved Armored Car',
+				label: 'Basic Armored Car',
 				img_src: '/Armored_car_equipment_1.png',
 			},
 			{
 				key: 'armored_car_equipment_2',
-				label: 'Advanced Armored Car',
+				label: 'Improved Armored Car',
 				img_src: '/Armored_car_equipment_2.png',
 			},
 			// ! TODO: check if armored_car_equipment_3 is a valid equipment key
 			{
 				key: 'armored_car_equipment_3',
-				label: 'Armored Car Equipment 3',
+				label: 'Anti-Tank Armored Car',
 				img_src: '/Armored_car_equipment_3.png',
 			},
 		],
@@ -131,7 +133,7 @@ export const equipmentData = [
 		items: [
 			{
 				key: 'mechanized_equipment_1',
-				label: 'Mechanized Equipment 1',
+				label: 'Mechanized Equipment I',
 				img_src: '/Mechanized_equipment_1.png',
 			},
 			{
@@ -196,12 +198,12 @@ export const equipmentData = [
 		items: [
 			{
 				key: 'amphibious_mechanized_equipment_1',
-				label: 'Amphibious Mech 1',
+				label: 'Basic Amphibious Tractor',
 				img_src: '/Generic_amphibious_mech_1.png',
 			},
 			{
 				key: 'amphibious_mechanized_equipment_2',
-				label: 'Amphibious Mech 2',
+				label: 'Improved Amphibious Tractor',
 				img_src: '/Generic_amphibious_mech_2.png',
 			},
 		],
@@ -209,10 +211,12 @@ export const equipmentData = [
 	{
 		category: 'Motorized Rocket Units',
 		items: [
+			// ! TODO: verify that motorized_rocket_equipment_1 is the correct key
 			{
 				key: 'motorized_rocket_equipment_1',
-				label: 'Motorized Rocket Unit',
+				label: 'Motorized Rocket Artillery',
 				img_src: '/Motorized_rocket_unit.png',
+				desc: 'Multiple rocket launchers such as these deliver explosives to a target area more quickly than conventional artillery, but with lower accuracy and requiring a longer time to reload. Being mounted on trucks, this version is able to launch attacks and change positions before the enemy can return fire',
 			},
 		],
 	},
