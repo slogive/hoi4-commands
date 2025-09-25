@@ -1,7 +1,7 @@
 'use client'
 
 import { Button, Form, InputNumber, List } from 'antd'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './page.scss'
 
@@ -203,6 +203,18 @@ const openNativeNotification = (message: string, imgSrc: string | null) => {
 
 export default function Home() {
 	const [count, setCount] = useState(1_000_000)
+	const [history, setHistory] = useState<string[]>(() => {
+		const savedHistory = localStorage.getItem('commandHistory')
+		return savedHistory ? JSON.parse(savedHistory) : []
+	})
+
+	useEffect(() => {
+		localStorage.setItem('commandHistory', JSON.stringify(history))
+	}, [history])
+
+	const addToHistory = (command: string) => {
+		setHistory((prev) => [command, ...prev.slice(0, 9)]) // Keep only the last 10 commands
+	}
 
 	return (
 		<div className='page'>
@@ -252,8 +264,8 @@ export default function Home() {
 										onClick={() => {
 											const command = `${aeCommand} ${item.key} ${count}`
 											navigator.clipboard.writeText(command)
-											// openNativeNotification(`Copied: ${command}`, item.img_src)
-											openNativeNotification(command, item.img_src)
+											openNativeNotification(`Copied: ${command}`, item.img_src)
+											addToHistory(command)
 										}}
 										className='item-container'
 									>
@@ -289,6 +301,15 @@ export default function Home() {
 						</div>
 					)}
 				/>
+
+				<section className='history-section'>
+					<section>History</section>
+
+					<List
+						dataSource={history}
+						renderItem={(command) => <List.Item>{command}</List.Item>}
+					/>
+				</section>
 			</main>
 		</div>
 	)
