@@ -227,37 +227,17 @@ export default function Home() {
 						/>
 					</Form.Item>
 
-					<Button
-						onClick={() => {
-							setCount(1000)
-						}}
-					>
-						1.000
-					</Button>
-
-					<Button
-						onClick={() => {
-							setCount(10_000)
-						}}
-					>
-						10.000
-					</Button>
-
-					<Button
-						onClick={() => {
-							setCount(100_000)
-						}}
-					>
-						100.000
-					</Button>
-
-					<Button
-						onClick={() => {
-							setCount(1_000_000)
-						}}
-					>
-						1'000.000
-					</Button>
+					{[1000, 10000, 100000, 1000000].map((val) => (
+						<Button
+							key={val}
+							onClick={() => setCount(val)}
+							style={{
+								fontWeight: 'bold',
+							}}
+						>
+							{val.toLocaleString('de-DE')}
+						</Button>
+					))}
 				</Form>
 
 				<List

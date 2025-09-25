@@ -23,8 +23,11 @@ $borderRadiusHover: 0.3rem;
 	display: grid;
 	gap: $gap;
 	margin: 0 auto;
-	grid-template-columns: repeat(5, 1fr);
 	width: 100%;
+
+	@media screen and (min-width: 769px) {
+		grid-template-columns: repeat(5, 1fr);
+	}
 
 	label {
 		color: #f0f0f0 !important;
@@ -33,9 +36,16 @@ $borderRadiusHover: 0.3rem;
 
 	.ant-form-item {
 		margin-bottom: 0;
+		font-weight: bold;
 
 		.ant-input-number-input {
 			border-radius: $borderRadius;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		button {
+			font-weight: bold;
 		}
 	}
 }
@@ -57,8 +67,11 @@ $borderRadiusHover: 0.3rem;
 
 		.items-container {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
 			gap: $gap;
+
+			@media screen and (min-width: 769px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
 
 			.item-container {
 				display: grid;
