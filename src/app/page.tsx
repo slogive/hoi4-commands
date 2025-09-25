@@ -258,13 +258,14 @@ const openNativeNotification = (message: string, imgSrc: string | null) => {
 
 export default function Home() {
 	const [count, setCount] = useState(1_000_000)
-	const [history, setHistory] = useState<string[]>(() => {
+	const [history, setHistory] = useState<string[]>([])
+
+	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const savedHistory = localStorage.getItem('commandHistory')
-			return savedHistory ? JSON.parse(savedHistory) : []
+			setHistory(savedHistory ? JSON.parse(savedHistory) : [])
 		}
-		return []
-	})
+	}, [])
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
@@ -330,26 +331,11 @@ export default function Home() {
 										className='item-container'
 									>
 										{item.img_src && (
-											<div
-												style={{
-													width: '103px',
-													height: '50px',
-													display: 'flex',
-													justifyContent: 'center',
-													alignItems: 'center',
-													backgroundColor: '#f0f0f0',
-												}}
-											>
+											<div className='item-image-container'>
 												<img
 													src={`/items${item.img_src}`}
 													alt={item.label}
-													style={{
-														maxWidth: '100%',
-														maxHeight: '100%',
-														objectFit: 'contain',
-														// object padding of 0.5rem
-														padding: '0.5rem',
-													}}
+													className='item-image'
 												/>
 											</div>
 										)}

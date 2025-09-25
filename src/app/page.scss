@@ -77,24 +77,38 @@ $lightGreenColor: rgb(54, 60, 44);
 
 			.item-container {
 				display: grid;
-				grid-template-columns: repeat(2, auto);
+				grid-template-columns: 100px 1fr;
 				gap: $gap;
 				border: $border;
 				background-color: #f0f0f0;
 				border-radius: $borderRadius;
 				overflow: hidden;
+				align-items: center;
+				padding: 0 $padding 0 0;
+				align-items: center;
 
 				&:hover {
 					cursor: pointer;
 					background-color: $borderColor;
 					transition: all 0.3s ease;
 					opacity: 0.8;
-					// size increase on hover
-					// transform: scale(1.02);
 					border-radius: $borderRadiusHover;
 
 					img {
 						filter: grayscale(100%);
+					}
+				}
+
+				.item-image-container {
+					display: grid;
+					justify-content: center;
+					align-items: center;
+
+					.item-image {
+						max-width: 100%;
+						max-height: 100%;
+						object-fit: contain;
+						padding: 0.5rem;
 					}
 				}
 			}
