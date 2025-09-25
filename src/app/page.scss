@@ -1,0 +1,58 @@
+$padding: 0.5rem;
+$borderColor: #f0f0f0;
+$border: 1px solid #{$borderColor};
+$gap: #{$padding};
+
+.page {
+	padding: $padding;
+
+	h1 {
+		text-align: center;
+	}
+
+	.main {
+		display: grid;
+		gap: $gap;
+	}
+}
+
+.ant-list-items {
+	display: grid;
+	gap: $gap;
+	border: $border;
+	padding: $padding !important;
+
+	.item-category {
+		display: grid;
+		gap: $gap;
+
+		.item-title {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		.items-container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: $gap;
+
+			.item-container {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+				gap: $gap;
+				// background-color: rebeccapurple;
+				border: $border;
+
+				&:hover {
+					cursor: pointer;
+					background-color: $borderColor;
+					transition: all 0.2s ease;
+
+					img {
+						filter: grayscale(100%);
+					}
+				}
+			}
+		}
+	}
+}
