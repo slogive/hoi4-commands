@@ -102,11 +102,12 @@ export const equipmentData = [
 	{
 		category: 'Armored Cars',
 		items: [
-			// {
-			// 	key: 'armored_car_equipment_0',
-			// 	label: 'Armored Car Equipment 0',
-			// 	img_src: '/Armored_car_equipment_0.png',
-			// },
+			// ! TODO: check if armored_car_equipment_0 is a valid equipment key
+			{
+				key: 'armored_car_equipment_0',
+				label: 'Armored Car Equipment 0',
+				img_src: '/Armored_car_equipment_0.png',
+			},
 			{
 				key: 'armored_car_equipment_1',
 				label: 'Improved Armored Car',
@@ -117,11 +118,12 @@ export const equipmentData = [
 				label: 'Advanced Armored Car',
 				img_src: '/Armored_car_equipment_2.png',
 			},
-			// {
-			// 	key: 'armored_car_equipment_3',
-			// 	label: 'Armored Car Equipment 3',
-			// 	img_src: '/Armored_car_equipment_3.png',
-			// },
+			// ! TODO: check if armored_car_equipment_3 is a valid equipment key
+			{
+				key: 'armored_car_equipment_3',
+				label: 'Armored Car Equipment 3',
+				img_src: '/Armored_car_equipment_3.png',
+			},
 		],
 	},
 	{
