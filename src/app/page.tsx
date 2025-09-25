@@ -220,6 +220,10 @@ export default function Home() {
 							value={count}
 							onChange={(value) => setCount(value || 0)}
 							style={{ width: '100%' }}
+							formatter={(value) =>
+								`${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+							}
+							parser={(value) => parseInt(value?.replace(/\./g, '') || '0', 10)}
 						/>
 					</Form.Item>
 
