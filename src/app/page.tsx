@@ -57,17 +57,17 @@ const equipmentData = [
 		category: 'Tank Destroyers / AT',
 		items: [
 			{
-				key: 'tank_destroyer_equipment_1',
+				key: 'anti_tank_equipment_0',
 				label: 'Tank Destroyer Equipment 1',
 				img_src: '/AT_1_allies.png',
 			},
 			{
-				key: 'tank_destroyer_equipment_2',
+				key: 'anti_tank_equipment_1',
 				label: 'Tank Destroyer Equipment 2',
 				img_src: '/AT_2_allies.png',
 			},
 			{
-				key: 'tank_destroyer_equipment_3',
+				key: 'anti_tank_equipment_2',
 				label: 'Tank Destroyer Equipment 3',
 				img_src: '/AT_3_allies.png',
 			},
@@ -77,17 +77,17 @@ const equipmentData = [
 		category: 'Anti-Air',
 		items: [
 			{
-				key: 'aa_gun_equipment_1',
+				key: 'anti_air_equipment_0',
 				label: 'AA Gun Equipment 1',
 				img_src: '/AA_1_allies.png',
 			},
 			{
-				key: 'aa_gun_equipment_2',
+				key: 'anti_air_equipment_1',
 				label: 'AA Gun Equipment 2',
 				img_src: '/AA_2_allies.png',
 			},
 			{
-				key: 'aa_gun_equipment_3',
+				key: 'anti_air_equipment_2',
 				label: 'AA Gun Equipment 3',
 				img_src: '/AA_3_allies.png',
 			},
@@ -97,12 +97,12 @@ const equipmentData = [
 		category: 'Trucks / Motorized',
 		items: [
 			{
-				key: 'motorized_equipment_1',
+				key: 'motorized_equipment_0',
 				label: 'Motorized Equipment 1 (Generic Trucks)',
 				img_src: '/Motorized_equipment_0.png',
 			},
 			{
-				key: 'motorized_equipment_2',
+				key: 'motorized_equipment_1',
 				label: 'Motorized Equipment 2 (Later-Tier Motorized)',
 				img_src: '/Motorized_equipment_1.png',
 			},
