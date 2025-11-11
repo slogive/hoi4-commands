@@ -135,6 +135,9 @@ export default function Home() {
 					<List
 						dataSource={history}
 						renderItem={(command) => <List.Item>{command}</List.Item>}
+						locale={{
+							emptyText: 'No history yet',
+						}}
 					/>
 				</section>
 			</main>

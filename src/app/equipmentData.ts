@@ -88,13 +88,13 @@ export const equipmentData = [
 		category: 'Trucks / Motorized',
 		items: [
 			{
-				key: 'motorized_equipment_1',
+				key: 'motorized_equipment_0',
 				label: 'Early Truck',
 				img_src: '/Motorized_equipment_0.png',
 				desc: 'During the Great War the armies starting using basic civilian trucks for transporting supplies and hauling equipment. These have since become an integral part of most armies',
 			},
 			{
-				key: 'motorized_equipment_2',
+				key: 'motorized_equipment_1',
 				label: 'Truck',
 				img_src: '/Motorized_equipment_1.png',
 				desc: 'Motorizing infantry is the first stage to mechanizing an army. Civilian trucks are readily adapted to military uses of transporting soldiers, towing guns, and carrying equipment and supplies. This greatly increases the strategic mobility of infantry units, which would otherwise rely on marching',
@@ -217,6 +217,17 @@ export const equipmentData = [
 				label: 'Motorized Rocket Artillery',
 				img_src: '/Motorized_rocket_unit.png',
 				desc: 'Multiple rocket launchers such as these deliver explosives to a target area more quickly than conventional artillery, but with lower accuracy and requiring a longer time to reload. Being mounted on trucks, this version is able to launch attacks and change positions before the enemy can return fire',
+			},
+		],
+	},
+	{
+		category: 'Convoys',
+		items: [
+			{
+				key: 'convoy_1',
+				label: 'Convoy',
+				img_src: '/Convoy.png',
+				desc: 'Convoys are used to transport resources and supplies across seas and oceans. They are vital for maintaining supply lines to overseas territories and allied nations',
 			},
 		],
 	},
