@@ -73,6 +73,8 @@ export default function Home() {
 								`${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 							}
 							parser={(value) => parseInt(value?.replace(/\./g, '') || '0', 10)}
+							max={1_000_000}
+							maxLength={9}
 						/>
 					</Form.Item>
 
